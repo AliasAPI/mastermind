@@ -8,6 +8,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+bin/
+include/
 env/
 build/
 develop-eggs/
@@ -34,6 +36,7 @@ wheels/
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+pip-selfcheck.json
 
 # Unit test / coverage reports
 htmlcov/
