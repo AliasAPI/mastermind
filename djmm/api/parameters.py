@@ -17,6 +17,7 @@ class CreateTestParameters(object):
         self.quantity() # Calculate before startcash()
         self.position()
         self.select_r()
+        self.sellstoppercentage()
         self.sharebuffer()
         self.startquote() # Calculate before startcash()
         self.startcash()
@@ -106,7 +107,7 @@ class CreateTestParameters(object):
     def sellstoppercentage(self):
         self.sellstoppercentage_min = 1
         self.sellstoppercentage_max = 100
-        self.sellstoppercentage_rand = random.randint(self.sellstoppercentage_min, self.sellstoppercentage_min)
+        self.sellstoppercentage_rand = random.randint(self.sellstoppercentage_min, self.sellstoppercentage_max)
         self.sellstoppercentage = self.sellstoppercentage_rand
 
     def sharebuffer(self):
@@ -136,7 +137,7 @@ class CreateTestParameters(object):
     def stoplosspercentage(self):
         self.stoplosspercentage_min = 1
         self.stoplosspercentage_max = 100
-        self.stoplosspercentage_rand = random.randint(1,100)
+        self.stoplosspercentage_rand = random.randint(self.stoplosspercentage_min, self.stoplosspercentage_max)
         self.stoplosspercentage = self.stoplosspercentage_rand
 
     def swing(self):
@@ -150,3 +151,6 @@ class CreateTestParameters(object):
         self.trailingpercentage_max = 100
         self.trailingpercentage_rand = random.randint(self.trailingpercentage_min, self.trailingpercentage_max)
         self.trailingpercentage = self.trailingpercentage_rand
+
+# a = CreateTestParameters()
+# print(a.stoplosspercentage)

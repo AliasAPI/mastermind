@@ -20,7 +20,7 @@ class Backtest(models.Model):
     # godresult decimal(10,2)
     godresult = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     # startdate datetime
-    startdate = models.DateField(null=False, blank=False)
+    startdate = models.DateField(null=True, blank=True)
     #duration int(5)
     duration = models.SmallIntegerField(blank=False, null=False)
     # startquote decimal(10,2)

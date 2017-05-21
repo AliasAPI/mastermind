@@ -50,7 +50,7 @@ class Migration(migrations.Migration):
                 ('date_created', models.DateTimeField(auto_now_add=True)),
                 ('date_assigned', models.DateTimeField(blank=True, null=True)),
                 ('date_modified', models.DateTimeField(auto_now=True)),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='backtest', to=settings.AUTH_USER_MODEL)),
+                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='backtest', to=settings.AUTH_USER_MODEL, unique=False)),
             ],
         ),
     ]
