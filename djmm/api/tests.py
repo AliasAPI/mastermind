@@ -33,10 +33,10 @@ class ModelTestCase(TestCase):
         self.backtest_buystop_percentage = 100
         self.backtest_sellstoppercentage = 1
         self.backtest_trailingpercentage = 1
-        self.backtest_buffer_test = 1      
+        self.backtest_buffer_test = 1
 
         self.backtest = Backtest(
-        name=self.backtest_name, 
+        name=self.backtest_name,
         startcash=self.backtest_startcash,
         duration=self.backtest_duration,
         startquote=self.backtest_startquote,
@@ -65,7 +65,7 @@ class ModelTestCase(TestCase):
         self.backtest.save()
         new_count = Backtest.objects.count()
         self.assertNotEqual(old_count, new_count)
-        
+
 class ViewTestCase(TestCase):
     """Test suite for the api views."""
 
@@ -94,16 +94,16 @@ class ViewTestCase(TestCase):
         "buystop_percentage": 100,
         "sellstoppercentage": 1,
         "trailingpercentage": 1,
-        "buffer_test": 1,        
+        "buffer_test": 1,
         "owner": user.id}
         self.response = self.client.post(
             reverse('create'),
             self.backtest_data,
             format="json")
-            
+
     def test_api_can_create_a_backtest(self):
         """Test the API has backtest creation capability."""
-        self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)    
+        self.assertEqual(self.response.status_code, status.HTTP_201_CREATED)
 
 
     def test_authorization_is_enforced(self):
@@ -147,7 +147,7 @@ class ViewTestCase(TestCase):
         "buystop_percentage": 100,
         "sellstoppercentage": 1,
         "trailingpercentage": 1,
-        "buffer_test": 1}  
+        "buffer_test": 1}
         res = self.client.put(
             reverse('details', kwargs={'pk': backtest.id}),
             change_backtest, format='json')
